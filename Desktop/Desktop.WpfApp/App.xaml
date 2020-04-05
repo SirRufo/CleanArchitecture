@@ -1,0 +1,18 @@
+﻿<Application
+      x:Class="Desktop.WpfApp.App"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:Desktop.WpfApp"
+      xmlns:views="clr-namespace:Desktop.WpfApp.Views"
+      xmlns:vm="clr-namespace:Desktop.Presentation.ViewModels;assembly=Desktop.Presentation">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <views:HomeControl />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <views:LoginControl />
+        </DataTemplate>
+        <!--  ein dummy Style der dafür sorgt, dass die Optimierung nicht zuschlägt und hier definierte DataTemplates unwirksam werden  -->
+        <Style TargetType="{x:Type Rectangle}" />
+    </Application.Resources>
+</Application>
