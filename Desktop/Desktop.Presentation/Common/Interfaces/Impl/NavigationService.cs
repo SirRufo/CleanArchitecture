@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Desktop.Presentation.Common.Interfaces.Impl
 {
+
     public class NavigationService : INavigationService
     {
         private readonly ILogger<NavigationService> _logger;

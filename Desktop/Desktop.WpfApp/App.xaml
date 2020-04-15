@@ -12,6 +12,9 @@
         <DataTemplate DataType="{x:Type vm:LoginViewModel}">
             <views:LoginControl />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditNameDialogViewModel}">
+            <views:EditNameDialogControl />
+        </DataTemplate>
         <!--  ein dummy Style der dafür sorgt, dass die Optimierung nicht zuschlägt und hier definierte DataTemplates unwirksam werden  -->
         <Style TargetType="{x:Type Rectangle}" />
     </Application.Resources>

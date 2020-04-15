@@ -12,10 +12,60 @@
       d:DesignWidth="800"
       mc:Ignorable="d">
     <Grid>
-        <Button
-              HorizontalAlignment="Center"
-              VerticalAlignment="Center"
-              Command="{Binding LogoutCommand}"
-              Content="Logout" />
+        <StackPanel>
+            <StackPanel
+                  HorizontalAlignment="Right"
+                  Orientation="Horizontal">
+                <Button
+                      Margin="5"
+                      Padding="5,2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Command="{Binding LogoutCommand}"
+                      Content="Logout" />
+            </StackPanel>
+
+            <Grid>
+                <DockPanel LastChildFill="True">
+                    <Label
+                          VerticalAlignment="Center"
+                          Content="Name:"
+                          DockPanel.Dock="Left" />
+                    <Button
+                          Margin="5"
+                          Padding="5,2"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Command="{Binding EditNameCommand}"
+                          Content="Edit"
+                          DockPanel.Dock="Right" />
+                    <TextBlock
+                          VerticalAlignment="Center"
+                          Text="{Binding Name}" />
+                </DockPanel>
+
+            </Grid>
+
+            <Grid>
+                <DockPanel LastChildFill="True">
+                    <Label
+                          VerticalAlignment="Center"
+                          Content="FileName:"
+                          DockPanel.Dock="Left" />
+                    <Button
+                          Margin="5"
+                          Padding="5,2"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Command="{Binding SelectTextFileCommand}"
+                          Content="..."
+                          DockPanel.Dock="Right" />
+                    <TextBlock
+                          VerticalAlignment="Center"
+                          Text="{Binding TextFileName}" />
+                </DockPanel>
+
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

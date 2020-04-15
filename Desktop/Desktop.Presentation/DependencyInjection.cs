@@ -2,9 +2,13 @@
 using Desktop.Presentation.Common.Interfaces.Impl;
 using Desktop.Presentation.ViewModels;
 
+using MediatR;
+
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 using System;
+using System.Reflection;
 
 namespace Desktop.Application
 {
@@ -14,12 +18,17 @@ namespace Desktop.Application
         {
             if ( services is null ) throw new ArgumentNullException( nameof( services ) );
 
-            services
-                .AddSingleton<INavigationService, NavigationService>()
+            services.TryAddSingleton<IDialogService, MediatorDialogService>();
+            services.TryAddSingleton<INavigationService, NavigationService>();
 
+            services.AddMediatR( Assembly.GetExecutingAssembly() );
+
+            services
                 .AddSingleton<MainViewModel>()
                 .AddTransient<LoginViewModel>()
-                .AddTransient<HomeViewModel>();
+                .AddTransient<HomeViewModel>()
+                .AddTransient<EditNameDialogViewModel>()
+                ;
 
             return services;
         }

@@ -47,7 +47,8 @@ namespace Desktop.WpfApp
                     services
                         .AddApplication()
                         .AddInfrastructure()
-                        .AddPresentation();
+                        .AddPresentation()
+                        .AddPlatform();
                 } );
         }
 
