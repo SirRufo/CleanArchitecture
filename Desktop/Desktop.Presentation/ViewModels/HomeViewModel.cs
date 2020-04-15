@@ -46,7 +46,4 @@ namespace Desktop.Presentation.ViewModels
         public ICommand LogoutCommand { get; }
 
     }
-
-    public class SimpleClass
-    { }
 }
